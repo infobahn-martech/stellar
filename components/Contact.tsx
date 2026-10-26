@@ -97,7 +97,7 @@ export default function Contact() {
           <p>Tell us a little about your project. We’ll help you find a thoughtful place to start.</p>
           <div className="contact-details contact-details-spaced">
             <a href="tel:+971558455038"><span><Phone size={17} /></span><div><small>Mobile</small><strong>+971 55-8455038</strong></div></a>
-            <div><span><Phone size={17} /></span><div><small>Immediate contacts</small><div className="contact-phones"><a href="tel:0555546541">055-5546541</a><a href="tel:0505540541">050-5540541</a></div></div></div>
+            <div><span><Phone size={17} /></span><div><small>Immediate contacts</small><div className="contact-phones"><a href="tel:0555546541">055-5546541</a><a href="tel:0505540541">050-5546541</a></div></div></div>
             <a href="tel:+97142204041"><span><Phone size={17} /></span><div><small>Landline</small><strong>+971 -4-2204041</strong></div></a>
             <a href="mailto:tech_sol@eim.ae"><span><Mail size={17} /></span><div><small>Email</small><strong>tech_sol@eim.ae</strong></div></a>
             <div><span><MapPin size={17} /></span><div><small>Find us</small><strong>Dubai, United Arab Emirates</strong></div></div>
