@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/components/assetPath";
 import Link from "next/link";
 import { ArrowUpRight, Droplets, Waves, Wind } from "lucide-react";
 
@@ -43,7 +44,7 @@ export default function Services() {
                     <span className="stellar-card-wordmark" />
                   </div>
                 ) : logo ? (
-                  <Image className="service-panel-logo service-panel-logo--atmos" src={logo} alt={`${name} ${subtitle}`} width={800} height={360} />
+                  <Image className="service-panel-logo service-panel-logo--atmos" src={assetPath(logo)} alt={`${name} ${subtitle}`} width={800} height={360} />
                 ) : (
                   <div className="cosmic-logo" aria-label={`${name} ${subtitle}`}>
                     <span>{name}</span><small>{subtitle}</small>

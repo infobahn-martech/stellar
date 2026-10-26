@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { assetPath } from "@/components/assetPath";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
@@ -9,10 +10,10 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-visual">
-        <Image src="/home-water.jpg" alt="Water flowing through a landscaped water treatment environment" fill priority sizes="100vw" className="hero-water-image" />
+        <Image src={assetPath("/home-water.jpg")} alt="Water flowing through a landscaped water treatment environment" fill priority sizes="100vw" className="hero-water-image" />
         <div className="hero-water-overlay" />
         <div className="hero-scent-panel" aria-hidden="true">
-          <Image src="/home-scent.jpg" alt="" fill sizes="(max-width: 680px) 45vw, 40vw" className="hero-scent-image" />
+          <Image src={assetPath("/home-scent.jpg")} alt="" fill sizes="(max-width: 680px) 45vw, 40vw" className="hero-scent-image" />
           <div className="hero-scent-overlay" />
         </div>
         <div className="hero-overlay" />

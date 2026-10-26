@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/components/assetPath";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Check, Droplets, Filter, FlaskConical, Waves, Wrench } from "lucide-react";
 import Footer from "@/components/Footer";
@@ -16,7 +17,7 @@ function BrandLockup({ solution }: { solution: Solution }) {
   }
 
   if (solution.slug === "atmos") {
-    return <Image className="solution-brand-image" src="/atmos-logo.png" alt="Atmos Nano Bubble Solutions" width={800} height={360} priority />;
+    return <Image className="solution-brand-image" src={assetPath("/atmos-logo.png")} alt="Atmos Nano Bubble Solutions" width={800} height={360} priority />;
   }
 
   return <div className="solution-cosmic-brand"><strong>COSMIC</strong><span>SCENT DIFFUSER</span></div>;
@@ -29,7 +30,7 @@ export default function SolutionPage({ solution }: { solution: Solution }) {
       <Navbar theme={solution.slug === "cosmic" ? "cosmic" : undefined} />
       <main className={`solution-page solution-page--${solution.slug}`}>
         <section className="solution-hero">
-          <Image src={solution.image} alt={solution.imageAlt} fill priority sizes="100vw" className="solution-hero-image" />
+          <Image src={assetPath(solution.image)} alt={solution.imageAlt} fill priority sizes="100vw" className="solution-hero-image" />
           <div className="solution-hero-shade" />
           <div className={`page-width solution-hero-content${solution.slug === "cosmic" ? " solution-hero-content--cosmic" : ""}`}>
             {solution.slug === "cosmic" ? (
@@ -76,7 +77,7 @@ export default function SolutionPage({ solution }: { solution: Solution }) {
                 {solution.diffuserGallery.map((image) => (
                   <figure key={image.src} className="cosmic-diffuser-item">
                     <figcaption>{image.title}</figcaption>
-                    <Image src={image.src} alt={image.alt} width={image.width} height={image.height} sizes="(max-width: 680px) 100vw, 1180px" />
+                    <Image src={assetPath(image.src)} alt={image.alt} width={image.width} height={image.height} sizes="(max-width: 680px) 100vw, 1180px" />
                   </figure>
                 ))}
               </div>
@@ -97,7 +98,7 @@ export default function SolutionPage({ solution }: { solution: Solution }) {
               <div className="cosmic-notes-grid">
                 {solution.fragranceNotes.cards.map((card) => (
                   <article key={card.name} className="cosmic-fragrance-card">
-                    <Image src={card.image} alt={card.alt} width={420} height={420} />
+                    <Image src={assetPath(card.image)} alt={card.alt} width={420} height={420} />
                     <div className="cosmic-fragrance-card-copy">
                       <h3>{card.name}</h3>
                       <span>{card.family}</span>
@@ -127,7 +128,7 @@ export default function SolutionPage({ solution }: { solution: Solution }) {
                   return (
                     <article className="service-card stellar-service-card" key={card.title}>
                       <div className="service-image-wrap">
-                        <Image src={card.image} alt={card.imageAlt} fill sizes="(max-width: 680px) 100vw, (max-width: 1000px) 50vw, 33vw" className="service-image" style={{ objectFit: card.imageFit ?? "cover" }} />
+                        <Image src={assetPath(card.image)} alt={card.imageAlt} fill sizes="(max-width: 680px) 100vw, (max-width: 1000px) 50vw, 33vw" className="service-image" style={{ objectFit: card.imageFit ?? "cover" }} />
                         <span className="service-number">{String(index + 1).padStart(2, "0")} / {String(serviceCards.length).padStart(2, "0")}</span>
                         <span className="service-icon"><Icon size={20} strokeWidth={1.65} /></span>
                       </div>

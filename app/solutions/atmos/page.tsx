@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { assetPath } from "@/components/assetPath";
 import Link from "next/link";
 import { Activity, ArrowRight, ArrowUpRight, Droplets, Filter, FlaskConical, Gauge, Leaf, Waves, Wind } from "lucide-react";
 import Footer from "@/components/Footer";
@@ -82,11 +83,11 @@ export default function AtmosPage() {
       <Navbar />
       <main className={styles.atmosPage}>
         <section className={styles.hero} aria-labelledby="atmos-title">
-          <Image className={styles.heroImage} src="/home-water.jpg" alt="Water moving through a landscaped treatment environment" fill priority sizes="100vw" />
+          <Image className={styles.heroImage} src={assetPath("/home-water.jpg")} alt="Water moving through a landscaped treatment environment" fill priority sizes="100vw" />
           <div className={styles.heroShade} />
           <div className={styles.heroContent}>
             <div className={styles.heroCopy}>
-              <Image className={styles.atmosLogo} src="/atmos-logo.png" alt="Atmos Nanobubble Solutions" width={800} height={360} priority />
+              <Image className={styles.atmosLogo} src={assetPath("/atmos-logo.png")} alt="Atmos Nanobubble Solutions" width={800} height={360} priority />
               <div className={styles.eyebrow}><span /> Water technology · application-led solutions</div>
               <h1 id="atmos-title">Atmos Nanobubble Solutions</h1>
               <h2>Advanced Nanobubble Technology for Smarter Water Treatment</h2>
@@ -155,7 +156,7 @@ export default function AtmosPage() {
               {applications.map(({ number, title, inquirySolution, image, alt, icon: Icon, text, points, note }) => (
                 <article className={styles.applicationCard} key={number}>
                   <div className={styles.applicationImage}>
-                    <Image src={image} alt={alt} fill sizes="(max-width: 680px) 100vw, (max-width: 1000px) 50vw, 25vw" />
+                    <Image src={assetPath(image)} alt={alt} fill sizes="(max-width: 680px) 100vw, (max-width: 1000px) 50vw, 25vw" />
                     <span className={styles.applicationNumber}>{number} / {String(applications.length).padStart(2, "0")}</span>
                     <span className={styles.applicationIcon}><Icon size={19} /></span>
                   </div>

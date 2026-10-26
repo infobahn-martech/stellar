@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { assetPath } from "@/components/assetPath";
 import { Menu, X } from "lucide-react";
 
 const links = [
@@ -36,8 +37,8 @@ export default function Navbar({ theme }: { theme?: "cosmic" }) {
   return (
     <header className={`site-header${scrolled ? " is-scrolled" : ""}${theme ? ` site-header--${theme}` : ""}`}>
       <nav className="nav-shell" aria-label="Main navigation">
-        <Link className="brand brand-logo" href="#home" aria-label="Stellar Technical Services home" onClick={() => setOpen(false)}>
-          <Image src="/stellar-logo.png" alt="Stellar Technical Services LLC" width={799} height={252} priority />
+        <Link className="brand brand-logo" href="/#home" aria-label="Stellar Technical Services home" onClick={() => setOpen(false)}>
+          <Image src={assetPath("/stellar-logo.png")} alt="Stellar Technical Services LLC" width={799} height={252} priority />
         </Link>
         <div className={`nav-links${open ? " is-open" : ""}`}>
           {links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}
