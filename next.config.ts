@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
-// Set to "" when the site moves to the root of the main domain.
-const basePath = "/stellartech";
+// Deployed at the root of stellartech.ae; set a prefix (e.g. "/stellartech") for sub-path hosting.
+const basePath = "";
 
 const nextConfig: NextConfig = {
   output: "export",
