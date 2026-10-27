@@ -12,7 +12,7 @@ export default function Footer() {
           <p>Thoughtful technology for<br />better everyday environments.</p>
           <Link className="footer-back" href="#home">Back to top <ArrowUpRight size={15} /></Link>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Stellar Technical Services. All rights reserved.</span><span>Website concept · Replace all demo details before launch</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} Stellar Technical Services. All rights reserved.</span></div>
       </div>
     </footer>
   );
